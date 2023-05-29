@@ -1,5 +1,6 @@
 package com.dstarizny.tutorialmod;
 
+import com.dstarizny.tutorialmod.block.ModBlocks;
 import com.dstarizny.tutorialmod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Block;
@@ -32,7 +33,7 @@ public class TutorialMod {
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
         ModItems.register(eventBus);
-
+        ModBlocks.register(eventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }

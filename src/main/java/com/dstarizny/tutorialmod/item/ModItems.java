@@ -1,6 +1,7 @@
 package com.dstarizny.tutorialmod.item;
 
 import com.dstarizny.tutorialmod.TutorialMod;
+import com.dstarizny.tutorialmod.block.custom.CoalCokeItem;
 import com.dstarizny.tutorialmod.item.custom.DowsingRodItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -21,5 +22,9 @@ public class ModItems {
     public static final RegistryObject<Item> DOWSING_ROD = ITEMS.register("dowsing_rod", () -> new DowsingRodItem(
                                                                                                      new Item.Properties().
                                                                                                      tab(ModCreativeModeTab.TUTOIRAL_TAB).durability(16)));
+
+    public static final RegistryObject<Item> CUCUMBER = ITEMS.register("cucumber", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTOIRAL_TAB).food(ModFoods.CUCUMBER) ));
+    public static final RegistryObject<Item> COAL_COKE = ITEMS.register("coal_coke", () -> new CoalCokeItem(new Item.Properties().tab(ModCreativeModeTab.TUTOIRAL_TAB) ));
+
 
 }

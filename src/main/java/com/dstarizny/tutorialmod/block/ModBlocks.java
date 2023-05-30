@@ -1,6 +1,7 @@
 package com.dstarizny.tutorialmod.block;
 
 import com.dstarizny.tutorialmod.TutorialMod;
+import com.dstarizny.tutorialmod.block.custom.SpeedyBlock;
 import com.dstarizny.tutorialmod.item.ModCreativeModeTab;
 import com.dstarizny.tutorialmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -25,6 +26,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_CITRINE_ORE = registerBlock("deepslate_citrine_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTOIRAL_TAB);
     public static final RegistryObject<Block> ENDSTONE_CITRINE_ORE = registerBlock("endstone_citrine_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTOIRAL_TAB);
     public static final RegistryObject<Block> NETHERRACK_CITRINE_ORE = registerBlock("netherrack_citrine_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTOIRAL_TAB);
+
+    public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block", () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTOIRAL_TAB);
 
 
     public static void register(IEventBus eventbus) {

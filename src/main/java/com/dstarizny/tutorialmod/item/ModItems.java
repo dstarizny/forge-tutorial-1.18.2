@@ -1,6 +1,7 @@
 package com.dstarizny.tutorialmod.item;
 
 import com.dstarizny.tutorialmod.TutorialMod;
+import com.dstarizny.tutorialmod.item.custom.DowsingRodItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,4 +18,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> CITRINE = ITEMS.register("citrine", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTOIRAL_TAB)));
     public static final RegistryObject<Item> RAW_CITRINE = ITEMS.register("raw_citrine", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTOIRAL_TAB)));
+    public static final RegistryObject<Item> DOWSING_ROD = ITEMS.register("dowsing_rod", () -> new DowsingRodItem(
+                                                                                                     new Item.Properties().
+                                                                                                     tab(ModCreativeModeTab.TUTOIRAL_TAB).durability(16)));
+
 }

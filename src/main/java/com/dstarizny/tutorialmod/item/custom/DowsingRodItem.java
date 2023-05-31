@@ -1,6 +1,10 @@
 package com.dstarizny.tutorialmod.item.custom;
 
+import com.dstarizny.tutorialmod.util.ModTags;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionResult;
@@ -8,14 +12,30 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 
 public class DowsingRodItem extends Item {
     public DowsingRodItem(Properties pProperties) {
         super(pProperties);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        if (Screen.hasShiftDown()) {
+            pTooltipComponents.add(new TranslatableComponent("tooltip.tutorialmod.downsing_rod.tooltip.shift"));
+        }
+        else {
+            pTooltipComponents.add(new TranslatableComponent("tooltip.tutorialmod.downsing_rod.tooltip"));
+        }
     }
 
     @Override
@@ -54,9 +74,7 @@ public class DowsingRodItem extends Item {
     }
 
     private boolean isValuableBlock(Block block) {
-        return block == Blocks.COAL_ORE || block == Blocks.IRON_ORE ||
-                block == Blocks.DIAMOND_ORE || block == Blocks.COPPER_ORE ||
-                block == Blocks.GOLD_ORE;
+        return Registry.BLOCK.getHolderOrThrow(Registry.BLOCK.getResourceKey(block).get()).is(ModTags.Blocks.DOWNSING_ROD_VALUABLES);
     }
 
 
